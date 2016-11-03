@@ -1,0 +1,62 @@
+﻿@model Student
+<fieldset>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <center>
+                <h4 class="modal-title">New Student</h4>
+            </center>
+        </div>
+        <div class="modal-body">
+            <div class="col-md-12">
+                <div class="clearfix"></div>
+                <div class="x_content">
+                    <br />
+                 @using (@Html.BeginForm("NewStudent", "Home", FormMethod.Post))
+                 {
+                     <div class="form-group">
+                         <div class="col-md-6 col-sm-6 col-xs-12">
+                             <label class="control-label col-md-2 col-sm-2 col-xs-12" style="margin-right: 10px">Course</label>
+                             <div class="col-md-3  col-sm-3 col-xs-12">
+                                 @*@Html.DropDownList("CourseID", null, "-- Select Course --", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })*@
+                             </div>
+                             <label class="control-label col-md-2 col-sm-2 col-xs-12" style="margin-right: 10px">Location</label>
+                             <div class="col-md-3 col-sm-3 col-xs-12">
+                                 @*@Html.DropDownList("LocationID", null, "-- Select Location--", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.LocationID, "", new { @class = "text-danger" })*@
+                             </div>
+                         </div>
+                         <div class="editor-label">
+                             @Html.LabelFor(model => model.FName)
+                         </div>
+                         <div class="editor-field">
+                             @Html.EditorFor(model => model.FName)
+                             @Html.ValidationMessageFor(model => model.FName)
+                         </div>
+                         <div class="editor-label">
+                             @Html.LabelFor(model => model.LName)
+                         </div>
+                         <div class="editor-field">
+                             @Html.EditorFor(model => model.LName)
+                             @Html.ValidationMessageFor(model => model.LName)
+                         </div>
+                     </div>
+                     <br/>
+                     <br/>
+                     <div class="form-group">
+                         <center>
+                             <p>
+                                 <input type="submit" value="Create"/>
+                             </p>
+                         </center>
+                     </div>
+                 }
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+        </div>
+    </div>
+</fieldset>
